@@ -1,0 +1,32 @@
+# This file is part of nginx-error-pages.
+#
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU Affero General Public License as published by the Free
+# Software Foundation, either version 3 of the License, or (at your option) any
+# later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+# details.
+#
+# You should have received a copy of the GNU Affero General Public License along
+# with this program. If not, see <https://www.gnu.org/licenses/>.
+#
+#
+# Copyright (C) 2020 mksec <support@mksec.de>
+
+# Exclude the generated sites and assets from jekyll, including its cache
+# directory and metadata files.
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+
+# Exclude external sources from package managers, as these can be downloaded and
+# therefore don't need to be committed. In addition all of the packagers lock
+# files will be ignored. Although this is not recommended by the maintainers of
+# the package managers, this avoids unnecessary commits and allows the use of
+# packages depending on the current environment instead of just the developer's
+# machine.
+/node_modules/
+/*.lock

@@ -1,0 +1,46 @@
+{% comment %}
+  This file is part of nginx-error-pages.
+
+  This program is free software: you can redistribute it and/or modify it under
+  the terms of the GNU Affero General Public License as published by the Free
+  Software Foundation, either version 3 of the License, or (at your option) any
+  later version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+  details.
+
+  You should have received a copy of the GNU Affero General Public License along
+  with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+  Copyright (C) 2020 mksec <support@mksec.de>
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Error</title>
+
+  {% comment %}
+    As the error page is returned as internal ressource, no external assets
+    should be linked, so no extra paths need to be publicly accessible via the
+    webserver. Therefore, the following include ensures all required assets to
+    be inlined in this HTML template.
+
+    TODO: At the moment, the generated assets are not cached and thus will be
+          generated for every single page independently. A cache should be used
+          to generate the assets just once for all pages.
+  {% endcomment %}
+  {% include styles.html %}
+</head>
+
+<body>
+</body>
+
+</html>

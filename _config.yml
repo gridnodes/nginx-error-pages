@@ -1,0 +1,35 @@
+# This file is part of nginx-error-pages.
+#
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU Affero General Public License as published by the Free
+# Software Foundation, either version 3 of the License, or (at your option) any
+# later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+# details.
+#
+# You should have received a copy of the GNU Affero General Public License along
+# with this program. If not, see <https://www.gnu.org/licenses/>.
+#
+#
+# Copyright (C) 2020 mksec <support@mksec.de>
+
+sass:
+  # Add dependencies installed by yarn / npm to the search path of Jekyll's sass
+  # compiler, so these can be imported by generated assets.
+  load_paths:
+    - node_modules
+
+  # Minify the CSS output by stripping out comments and unnecessary spaces,
+  # compressing the output into a single line. This setting ensures a minified
+  # size of the error pages.
+  style: compressed
+
+
+# Exclude all files not required for deployment, to optimize the build process
+# by reducing necessary copying of files and reducing the package size.
+exclude:
+  - package.json
+  - '*.lock'

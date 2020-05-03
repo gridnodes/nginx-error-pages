@@ -1,0 +1,33 @@
+{% comment %}
+  This file is part of nginx-error-pages.
+
+  This program is free software: you can redistribute it and/or modify it under
+  the terms of the GNU Affero General Public License as published by the Free
+  Software Foundation, either version 3 of the License, or (at your option) any
+  later version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+  details.
+
+  You should have received a copy of the GNU Affero General Public License along
+  with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+  Copyright (C) 2020 mksec <support@mksec.de>
+
+
+  This file generates the inline CSS styles used by all error pages to avoid an
+  extra asset to be loaded. Therefore, the SCSS file gets imported into a local
+  variable before parsing its contents, which will be embedded in a <style> HTML
+  tag.
+{% endcomment %}
+
+{% capture styles %}
+{% include styles.scss %}
+{% endcapture %}
+
+<style>
+{{ styles | scssify | strip_newlines }}
+</style>
