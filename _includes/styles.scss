@@ -41,3 +41,25 @@ $body-bg:      #eee;
 @import "bootstrap/scss/mixins";
 
 @import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities/text";
+
+
+/* For the error page header, additional classes are required for sizing the
+ * components, as the default sizing classes of bootstrap don't fit the needs of
+ * the design. In addition, this saves about 20 KB of memory for not using the
+ * sizing utilities. */
+.header {
+    padding-top:    30px;
+    padding-bottom: 30px;
+
+    .status {
+        font-size:   4.5rem;
+        line-height: 1;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}

@@ -18,6 +18,19 @@
   Copyright (C) 2020 mksec <support@mksec.de>
 {% endcomment %}
 
+{% comment %}
+  Various strings of this template should be internationalized according to the
+  language the error page is generated for. The following variable provides an
+  alias to access the global translations defined in the '_data' directory.
+
+  NOTE: This alias requires the page file to set a 'language' key according to
+        the language file to be used in its front matter.
+
+  NOTE: This variable is not accessible in templates inheriting from this one.
+{% endcomment %}
+{% assign trans = site.data[page.language] %}
+
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -25,7 +38,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Error</title>
+  <title>{{ page.title }}</title>
 
   {% comment %}
     As the error page is returned as internal ressource, no external assets
@@ -41,6 +54,33 @@
 </head>
 
 <body>
+  <div class="container header">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 font-weight-lighter">
+        <div class="status">{{ trans.error }} {{ page.status }}</div>
+        <div class="title">{{ page.title }}</div>
+      </div>
+      <div class="col-lg-8 col-md-6 text-right text-monospace small text-muted">
+        00000000000000000000000000000000<br/>
+        2020-05-03 00:00:00 UTC
+      </div>
+    </div>
+  </div>
+
+  {{ content }}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{ trans.whathappened }}</h3>
+        <p>{{ page.explain }}</p>
+      </div>
+      <div class="col-md-6">
+        <h3>{{ trans.whatcanido }}</h3>
+        <p>{{ page.resolve }}</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
