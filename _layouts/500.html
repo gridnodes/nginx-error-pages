@@ -17,16 +17,10 @@
 #
 # Copyright (C) 2020 mksec <support@mksec.de>
 
-layout:   500
-language: en
-
+layout: default
 status: 500
-title:  Internal Server Error
-
-explain: "A 500 error status implies there is a problem with the web server's
-          software causing it to malfunction."
-
-resolve: "Nothing you can do at the moment. This error can only be fixed by
-          server admins. If you need immediate assistance, please send us an
-          email instead. We apologize for any inconvenience."
 ---
+
+<div class="icon icon-red">
+{% include fontawesome/solid/bolt.svg %}
+</div>

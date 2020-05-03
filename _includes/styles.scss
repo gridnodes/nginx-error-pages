@@ -28,6 +28,7 @@ $enable-print-styles: false;
 $enable-prefers-reduced-motion-media-query: false;
 
 $body-bg:      #eee;
+$jumbotron-bg: #ddd;
 
 
 /* Include bootstrap.
@@ -43,6 +44,7 @@ $body-bg:      #eee;
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/utilities/text";
 
 
@@ -63,3 +65,18 @@ $body-bg:      #eee;
         font-size: 1.75rem;
     }
 }
+
+/* To avoid webfonts being used, font awesome icons are directly included as SVG
+ * files into the error pages. Therefore, the following helper classes scale the
+ * icons. For colors, seperate helper classes will be used, as the default text
+ * color classes don't apply to SVG's 'fill' attribute. */
+.icon {
+    svg {
+        width:  10%;
+        height: auto;
+    }
+}
+
+.icon-green  { fill: $green;  }
+.icon-yellow { fill: $yellow; }
+.icon-red    { fill: $red;    }

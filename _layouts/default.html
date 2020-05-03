@@ -57,7 +57,7 @@
   <div class="container header">
     <div class="row">
       <div class="col-lg-4 col-md-6 font-weight-lighter">
-        <div class="status">{{ trans.error }} {{ page.status }}</div>
+        <div class="status">{{ trans.error }} {{ layout.status }}</div>
         <div class="title">{{ page.title }}</div>
       </div>
       <div class="col-lg-8 col-md-6 text-right text-monospace small text-muted">
@@ -67,7 +67,11 @@
     </div>
   </div>
 
-  {{ content }}
+  <div class="jumbotron">
+    <div class="container text-center">
+      {{ content }}
+    </div>
+  </div>
 
   <div class="container">
     <div class="row">
