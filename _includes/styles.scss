@@ -30,6 +30,11 @@ $enable-prefers-reduced-motion-media-query: false;
 $body-bg:      #eee;
 $jumbotron-bg: #ddd;
 
+$dark-body-bd:      #333;
+$dark-jumbotron-bg: #222;
+$dark-body-color:   white;
+$dark-text-muted:   #aaa;
+
 $footer-height: 2rem;
 
 
@@ -117,3 +122,25 @@ body {
 .icon-green  { fill: $green;  }
 .icon-yellow { fill: $yellow; }
 .icon-red    { fill: $red;    }
+
+
+/* If the client prefers a dark color scheme, the following classes will be
+ * applied to give the site a dark look and feel.
+ *
+ * NOTE: These classes need to be at the end of this file, as they override the
+ *       default settings previously defined, if the dark color scheme is
+ *       requested. */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $dark-body-bd;
+        color:            $dark-body-color;
+    }
+
+    .jumbotron {
+        background-color: $dark-jumbotron-bg;
+    }
+
+    .text-muted {
+        color: $dark-text-muted !important;
+    }
+}
