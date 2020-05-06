@@ -20,6 +20,7 @@ sass:
   # Add dependencies installed by yarn / npm to the search path of Jekyll's sass
   # compiler, so these can be imported by generated assets.
   load_paths:
+    - _includes
     - node_modules
 
   # Minify the CSS output by stripping out comments and unnecessary spaces,

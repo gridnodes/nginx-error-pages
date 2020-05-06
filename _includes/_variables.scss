@@ -1,0 +1,48 @@
+/* This file is part of nginx-error-pages.
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *
+ *
+ * Copyright (C) 2020 mksec <support@mksec.de>
+ */
+
+/* Override bootstrap variables.
+ *
+ * The following variables override the default values of bootstrap to tweak its
+ * appearance and disable unused features to minify the generated CSS. */
+
+$enable-rounded:      false;
+$enable-transitions:  false;
+$enable-print-styles: false;
+$enable-prefers-reduced-motion-media-query: false;
+
+$body-bg:      #eee;
+$jumbotron-bg: #ddd;
+
+
+/* Add custom variables for dark colors, not included in the default bootstrap
+ * source code. These will be used automatically, if the client prefers a dark
+ * color scheme. */
+
+$dark-body-bd:      #333;
+$dark-jumbotron-bg: #222;
+$dark-body-color:   white;
+$dark-text-muted:   #aaa;
+
+
+// ====
+// Misc
+// ====
+
+$footer-height: 2rem;
