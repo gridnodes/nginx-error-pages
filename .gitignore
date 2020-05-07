@@ -22,6 +22,11 @@
 /.jekyll-cache/
 /.jekyll-metadata
 
+# Exclude generated assets from build scripts of this project, as these will be
+# generated from sources at build time and thus don't need to be checked into
+# version control.
+/_includes/svgs/*.svg
+
 # Exclude external sources from package managers, as these can be downloaded and
 # therefore don't need to be committed. In addition all of the packagers lock
 # files will be ignored. Although this is not recommended by the maintainers of

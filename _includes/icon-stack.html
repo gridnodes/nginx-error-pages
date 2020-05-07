@@ -30,22 +30,13 @@
     {% include {{ icon }} %}
   </div>
 
-  {% comment %}
-    The status marker should have a white checkmark or cross embedded. As the
-    circle including these figures has a transparent cutout, a white background
-    needs to be used instead.
-  {% endcomment %}
-  <div class="icon icon-mark icon-white">
-    {% include fontawesome/solid/circle.svg %}
-  </div>
-
   {% if include.fail != true %}
     <div class="icon icon-mark icon-green">
-      {% include fontawesome/solid/check-circle.svg %}
+      {% include svgs/mark-ok.svg %}
     </div>
   {% else %}
     <div class="icon icon-mark icon-red">
-      {% include fontawesome/solid/times-circle.svg %}
+      {% include svgs/mark-fail.svg %}
     </div>
   {% endif %}
 </div>
