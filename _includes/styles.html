@@ -25,7 +25,7 @@
 {% endcomment %}
 
 {% capture styles %}
-{% include styles.scss %}
+{% include {{ layout.styles | default: "styles.scss" }} %}
 {% endcapture %}
 
 <style>

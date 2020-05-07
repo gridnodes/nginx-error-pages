@@ -19,8 +19,17 @@
 
 layout: default
 status: 500
+styles: icon-stack-styles.scss
 ---
 
-<div class="icon icon-red">
-{% include fontawesome/solid/bolt.svg %}
+<div class="row">
+  <div class="col text-md-left">
+    {% include icon-stack.html icon="desktop" %}
+  </div>
+  <div class="col">
+    {% include icon-stack.html icon="cloud" %}
+  </div>
+  <div class="col text-md-right">
+    {% include icon-stack.html icon="server" fail=true %}
+  </div>
 </div>
