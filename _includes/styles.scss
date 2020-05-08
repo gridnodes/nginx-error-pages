@@ -42,6 +42,8 @@
  * the design. In addition, this saves about 20 KB of memory for not using the
  * sizing utilities. */
 .header {
+    @extend .font-weight-lighter;
+
     padding-top:    30px;
     padding-bottom: 30px;
 
@@ -49,10 +51,11 @@
         font-size:   4.5rem;
         line-height: 1;
     }
+}
 
-    .title {
-        font-size: 1.75rem;
-    }
+.title {
+    @extend .font-weight-lighter;
+    font-size: 1.75rem;
 }
 
 /* The following classes will be used to define the look of the page's footer.
