@@ -22,16 +22,43 @@ status: 500
 styles: icon-stack-styles.scss
 ---
 
+{% comment %}
+  Various strings of this template should be internationalized according to the
+  language the error page is generated for. The following variable provides an
+  alias to access the global translations defined in the '_data' directory.
+
+  NOTE: This alias requires the page file to set a 'language' key according to
+        the language file to be used in its front matter.
+
+  NOTE: This variable is not accessible in templates inheriting from this one.
+{% endcomment %}
+{% assign trans = site.data[page.language] %}
+
+
 <div class="row">
-  <div class="col text-md-left">
+  <div class="col">
     {% include icon-stack.html icon="desktop" class="icon-md icon-m10" %}
+    <div>
+      <div class="text-muted title">{{ trans.device }}</div>
+      <div class="text-success">{{ trans.working }}</div>
+    </div>
   </div>
+
   <div class="col">
     {% include icon-stack.html icon="cloud" %}
+    <div>
+      <div class="text-muted title">{{ trans.network }}</div>
+      <div class="text-success">{{ trans.working }}</div>
+    </div>
   </div>
-  <div class="col text-md-right">
+
+  <div class="col">
     {% include icon-stack.html icon="server"
        class="icon-md icon-m1"
        fail=true %}
+    <div>
+      <div class="text-muted title">{{ trans.app }}</div>
+      <div class="text-danger">{{ trans.error }}</div>
+    </div>
   </div>
 </div>

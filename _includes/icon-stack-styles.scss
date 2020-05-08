@@ -29,6 +29,7 @@ $icon-mark-margin: -40px;
 
 .icon-stack {
     display: inline-block;
+    margin-bottom: (-1 * $icon-mark-margin) / 2;
 }
 
 .icon-mark {
@@ -57,7 +58,7 @@ $icon-mark-margin: -40px;
  * adding a margin. */
 @each $margin in 1, 10 {
     .icon-m#{$margin} {
-        margin-top: #{$margin}px;
+        margin: #{$margin}px 0 #{$margin}px 0;
 
         /* As the margin got increased, the margin of the marker icon needs to
          * be adjusted, so it keeps the same absolute vertical position as other

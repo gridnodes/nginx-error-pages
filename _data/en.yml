@@ -22,3 +22,9 @@ whathappened: "What happened?"
 whatcanido:   "What can I do?"
 
 poweredby: "Powered by"
+
+device:  "My Device"
+network: "Network"
+app:     "Application"
+working: "Working"
+error:   "Error"
