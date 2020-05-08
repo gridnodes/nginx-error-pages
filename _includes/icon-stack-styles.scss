@@ -19,6 +19,10 @@
 
 @import "styles";
 
+/* For pages using the icon stack, the display classes will be used, as some of
+ * the icons shouldn't be displayed on small devices. */
+@import "bootstrap/scss/utilities/display";
+
 /* The following classes extend the icon classes of the default stylesheet with
  * classes required for the icon stack.
  *

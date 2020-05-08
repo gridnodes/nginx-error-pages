@@ -36,7 +36,7 @@ styles: icon-stack-styles.scss
 
 
 <div class="row">
-  <div class="col">
+  <div class="col d-none d-md-block">
     {% include icon-stack.html icon="desktop" class="icon-md icon-m10" %}
     <div>
       <div class="text-muted title">{{ trans.device }}</div>
@@ -44,7 +44,7 @@ styles: icon-stack-styles.scss
     </div>
   </div>
 
-  <div class="col">
+  <div class="col d-none d-md-block">
     {% include icon-stack.html icon="cloud" %}
     <div>
       <div class="text-muted title">{{ trans.network }}</div>
