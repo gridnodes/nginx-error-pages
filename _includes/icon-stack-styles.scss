@@ -39,8 +39,8 @@ $icon-mark-margin: -40px;
         width: $icon-width-sm;
     }
 
-    svg > path:nth-of-type(1){
-        fill: white;
+    svg > path:first-child {
+        fill: $white;
     }
 }
 
@@ -71,5 +71,4 @@ $icon-mark-margin: -40px;
 }
 
 
-.icon-white { fill: white; }
 .icon-grey  { fill: $dark-text-muted; }
