@@ -24,12 +24,14 @@ styles: icon-stack-styles.scss
 
 <div class="row">
   <div class="col text-md-left">
-    {% include icon-stack.html icon="desktop" %}
+    {% include icon-stack.html icon="desktop" class="icon-md icon-m10" %}
   </div>
   <div class="col">
     {% include icon-stack.html icon="cloud" %}
   </div>
   <div class="col text-md-right">
-    {% include icon-stack.html icon="server" fail=true %}
+    {% include icon-stack.html icon="server"
+       class="icon-md icon-m1"
+       fail=true %}
   </div>
 </div>

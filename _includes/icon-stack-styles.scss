@@ -25,16 +25,18 @@
  * NOTE: An individual stylesheet will be generated to minify the sources for
  *       error pages not using this feature. */
 
+$icon-mark-margin: -40px;
+
 .icon-stack {
     display: inline-block;
 }
 
 .icon-mark {
     position: absolute;
-    margin: -40px 0 0 75px;
+    margin: $icon-mark-margin 0 0 (($icon-width - $icon-width-sm) / 2);
 
     svg {
-        width: 50px;
+        width: $icon-width-sm;
     }
 
     svg > path:nth-of-type(1){
@@ -42,6 +44,32 @@
     }
 }
 
-.icon-white { fill: white; }
+.icon-md {
+    .icon-mark {
+        margin-left: ($icon-width-md - $icon-width-sm) / 2;
+    }
+}
 
-.icon-grey   { fill: $dark-text-muted; }
+
+/* If there are multiple icon stacks side by side on the page, all should have
+ * the same size and should be bottom-aligned, so the checkmarks are on the same
+ * page height. The following classes allow the icons to be vertically moved by
+ * adding a margin. */
+@each $margin in 1, 10 {
+    .icon-m#{$margin} {
+        margin-top: #{$margin}px;
+
+        /* As the margin got increased, the margin of the marker icon needs to
+         * be adjusted, so it keeps the same absolute vertical position as other
+         * marker icons of the same page. */
+        @if $margin > 1 {
+            .icon-mark {
+                margin-top: $icon-mark-margin + $margin - 2px;
+            }
+        }
+    }
+}
+
+
+.icon-white { fill: white; }
+.icon-grey  { fill: $dark-text-muted; }

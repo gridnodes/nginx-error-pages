@@ -41,6 +41,15 @@ $dark-body-color:   white;
 $dark-text-muted:   #aaa;
 
 
+/* For sizing the font awesome icon SVG elements, the following width will be
+ * used. Besides the default size, a medium one will be used for icons saved
+ * with an other ratio than the regular ones. The error indicator marks will
+ * have the small size. */
+$icon-width:    190px;
+$icon-width-md: 150px;
+$icon-width-sm:  50px;
+
+
 // ====
 // Misc
 // ====

@@ -96,9 +96,13 @@ body {
  * color classes don't apply to SVG's 'fill' attribute. */
 .icon {
     svg {
-        width:  200px;
-        height: auto;
-        max-height: 200px;
+        width: $icon-width;
+    }
+}
+
+.icon-md {
+    svg {
+        width: $icon-width-md;
     }
 }
 

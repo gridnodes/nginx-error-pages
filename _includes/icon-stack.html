@@ -26,17 +26,17 @@
 
 
 <div class="icon-stack">
-  <div class="icon icon-grey">
+  <div class="{{ include.class | default: "icon" }} icon-grey">
     {% include {{ icon }} %}
-  </div>
 
-  {% if include.fail != true %}
-    <div class="icon icon-mark icon-green">
-      {% include svgs/mark-ok.svg %}
-    </div>
-  {% else %}
-    <div class="icon icon-mark icon-red">
-      {% include svgs/mark-fail.svg %}
-    </div>
-  {% endif %}
+    {% if include.fail != true %}
+      <div class="icon-mark icon-green">
+        {% include svgs/mark-ok.svg %}
+      </div>
+    {% else %}
+      <div class="icon-mark icon-red">
+        {% include svgs/mark-fail.svg %}
+      </div>
+    {% endif %}
+  </div>
 </div>
