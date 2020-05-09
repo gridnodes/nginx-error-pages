@@ -27,6 +27,9 @@ $enable-transitions:  false;
 $enable-print-styles: false;
 $enable-prefers-reduced-motion-media-query: false;
 
+$grid-columns:     1; // 0 can't be used because of division by zero
+$grid-row-columns: 0;
+
 $body-bg:      #eee;
 $jumbotron-bg: #ddd;
 

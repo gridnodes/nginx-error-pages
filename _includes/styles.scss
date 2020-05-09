@@ -55,7 +55,7 @@
 
 .title {
     @extend .font-weight-lighter;
-    font-size: 1.75rem;
+    font-size: $h3-font-size;
 }
 
 /* The following classes will be used to define the look of the page's footer.
