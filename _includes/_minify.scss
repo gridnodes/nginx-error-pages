@@ -1,0 +1,108 @@
+/* This file is part of nginx-error-pages.
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *
+ *
+ * Copyright (C) 2020 mksec <support@mksec.de>
+ */
+
+/* Bootstrap has just limited capabilities to minify its output. However, the
+ * Sass compiler will drop all attributes having 'null' set as their value.
+ *
+ * Therefore, this Sass script will set all configurable variables of bootstrap
+ * unused by the error page templates to avoid superflous CSS styles being
+ * printed. This will not save all superflous classes from being printed, but
+ * can save big chunks of them to save bandwith. */
+
+// ======
+// reboot
+// ======
+
+$dt-font-weight: null;
+$font-weight-bolder: null;
+
+$table-cell-padding:  null;
+$table-caption-color: null;
+
+$label-margin-bottom: null;
+
+
+// ====
+// type
+// ====
+
+$h1-font-size: null;
+$h2-font-size: null;
+$h4-font-size: null;
+$h5-font-size: null;
+$h6-font-size: null;
+
+$lead-font-size:   null;
+$lead-font-weight: null;
+
+$display-line-height: null;
+
+$display1-size: null;
+$display2-size: null;
+$display3-size: null;
+$display4-size: null;
+
+$display1-weight: null;
+$display2-weight: null;
+$display3-weight: null;
+$display4-weight: null;
+
+$hr-margin-y: null;
+
+$mark-padding: null;
+$mark-bg:      null;
+
+$list-inline-padding: null;
+
+$blockquote-font-size:       null;
+$blockquote-small-font-size: null;
+$blockquote-small-color:     null;
+
+
+// ====
+// grid
+// ====
+
+@mixin row-cols($count) {}
+@mixin make-col-auto() {}
+@mixin make-col-offset($size, $columns) {}
+
+$grid-breakpoints:     map-remove($grid-breakpoints,     "sm", "lg", "xl");
+$container-max-widths: map-remove($container-max-widths, "sm", "md", "xl");
+
+
+// ===============
+// utilities/_text
+// ===============
+
+@mixin text-truncate() {}
+@mixin text-hide($ignore-warning) {}
+
+$theme-colors: map-remove($theme-colors,
+                          "primary", "secondary", "info", "warning",
+                          "light", "dark");
+
+$emphasized-link-hover-darken-percentage: 0;
+
+
+// =================
+// utilities/display
+// =================
+
+$displays: none, block;

@@ -26,12 +26,16 @@ $enable-rounded:      false;
 $enable-transitions:  false;
 $enable-print-styles: false;
 $enable-prefers-reduced-motion-media-query: false;
+$enable-pointer-cursor-for-buttons:         false;
 
 $grid-columns:     1; // 0 can't be used because of division by zero
 $grid-row-columns: 0;
 
 $body-bg:      #eee;
 $jumbotron-bg: #ddd;
+
+$link-color:       $text-muted;
+$link-hover-color: null; // same as $link-color
 
 
 /* Add custom variables for dark colors, not included in the default bootstrap

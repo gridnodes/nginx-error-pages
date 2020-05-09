@@ -17,9 +17,6 @@
  * Copyright (C) 2020 mksec <support@mksec.de>
  */
 
-@import "variables";
-
-
 /* Include bootstrap.
  *
  * First, required bootstrap files will be imported to get the basic framework
@@ -29,6 +26,9 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
+
+@import "variables";
+@import "minify";
 
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
@@ -90,7 +90,6 @@ body {
      * bootstrap classes, so these don't have be set additionally for the footer
      * in HTML. */
     @extend .small, .text-muted, .text-right;
-    a { @extend .text-muted; }
 }
 
 /* To avoid webfonts being used, font awesome icons are directly included as SVG
