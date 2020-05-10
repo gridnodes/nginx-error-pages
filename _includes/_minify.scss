@@ -84,7 +84,7 @@ $blockquote-small-color:     null;
 @mixin make-col-offset($size, $columns) {}
 
 $grid-breakpoints:     map-remove($grid-breakpoints,     "sm", "lg", "xl");
-$container-max-widths: map-remove($container-max-widths, "sm", "md", "xl");
+$container-max-widths: map-remove($container-max-widths, "sm", "md", "lg");
 
 
 // ===============

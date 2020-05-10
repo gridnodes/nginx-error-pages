@@ -33,7 +33,6 @@
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/utilities/text";
 
 
@@ -92,6 +91,23 @@ body {
     @extend .small, .text-muted, .text-right;
 }
 
+/* Instead of using the default bootstrap's jumbotron class, a slightly adapted
+ * version will be used to use 'md' breakpoint instead of the default 'sm' one,
+ * as this is the breakpoint for all other elements of the theme, too. */
+.jumbotron {
+    padding:          $jumbotron-padding ($jumbotron-padding / 2);
+    margin-bottom:    $jumbotron-padding;
+    background-color: $jumbotron-bg;
+
+    @include media-breakpoint-up(md) {
+        padding: ($jumbotron-padding * 2) $jumbotron-padding;
+    }
+
+    .title {
+        @extend .text-muted;
+    }
+}
+
 /* To avoid webfonts being used, font awesome icons are directly included as SVG
  * files into the error pages. Therefore, the following helper classes scale the
  * icons. For colors, seperate helper classes will be used, as the default text
@@ -129,7 +145,7 @@ body {
         background-color: $dark-jumbotron-bg;
     }
 
-    .text-muted {
+    .text-muted, a {
         color: $dark-text-muted !important;
     }
 }

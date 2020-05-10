@@ -39,7 +39,7 @@ styles: icon-stack-styles.scss
   <div class="col d-none d-md-block">
     {% include icon-stack.html icon="desktop" class="icon-md icon-m10" %}
     <div>
-      <div class="text-muted title">{{ trans.device }}</div>
+      <div class="title">{{ trans.device }}</div>
       <div class="text-success">{{ trans.working }}</div>
     </div>
   </div>
@@ -47,7 +47,7 @@ styles: icon-stack-styles.scss
   <div class="col d-none d-md-block">
     {% include icon-stack.html icon="cloud" %}
     <div>
-      <div class="text-muted title">{{ trans.network }}</div>
+      <div class="title">{{ trans.network }}</div>
       <div class="text-success">{{ trans.working }}</div>
     </div>
   </div>
@@ -57,7 +57,7 @@ styles: icon-stack-styles.scss
        class="icon-md icon-m1"
        fail=true %}
     <div>
-      <div class="text-muted title">{{ trans.app }}</div>
+      <div class="title">{{ trans.app }}</div>
       <div class="text-danger">{{ trans.error }}</div>
     </div>
   </div>
