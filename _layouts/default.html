@@ -30,6 +30,14 @@
 {% endcomment %}
 {% assign trans = site.data[page.language] %}
 
+{% comment %}
+  Get the status code for the error status page. By default, this is the status
+  code defined by the templated used. However, pages may override it, if
+  multiple status codes share the same template (i.e. status 5xx pages).
+
+  NOTE: This variable is not accessible in templates inheriting from this one.
+{% endcomment %}
+{% assign status = page.status | default: layout.status %}
 
 <!DOCTYPE html>
 <html lang="de">
@@ -57,7 +65,7 @@
   <div class="container header">
     <div class="row">
       <div class="col-md">
-        <div class="status">{{ trans.error }} {{ layout.status }}</div>
+        <div class="status">{{ trans.error }} {{ status }}</div>
         <div class="title">{{ page.title }}</div>
       </div>
       <div class="col-md text-right text-monospace small text-muted">
