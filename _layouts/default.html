@@ -65,8 +65,12 @@
   <div class="container header">
     <div class="row">
       <div class="col-md">
-        <div class="status">{{ trans.error }} {{ status }}</div>
-        <div class="title">{{ page.title }}</div>
+        {% if status %}
+          <div class="status">{{ trans.error }} {{ status }}</div>
+          <div class="title">{{ page.title }}</div>
+        {% else %}
+          <div class="status">{{ page.title }}</div>
+        {% endif %}
       </div>
       <div class="col-md text-right text-monospace small text-muted">
         00000000000000000000000000000000<br/>
