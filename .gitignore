@@ -35,3 +35,8 @@
 # machine.
 /node_modules/
 /*.lock
+
+# Exclude the build directory from being committed into the VCS, but especially
+# from being copied into the build context (when used as dockerignore) to avoid
+# conflicts with the build environment, which uses a directory named '/build'.
+/build

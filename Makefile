@@ -45,6 +45,13 @@ _includes/svgs/mark-fail.svg:                                        \
 build: svgs
 	jekyll build -V
 
+build-dev:
+	docker build -t nginx-error-pages .
+	docker create --name tmp-nginx-ep nginx-error-pages noop
+	rm -rf build
+	docker cp tmp-nginx-ep:/nginx build
+	docker rm tmp-nginx-ep
+
 
 # =======
 # cleanup
