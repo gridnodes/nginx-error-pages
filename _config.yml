@@ -34,3 +34,5 @@ sass:
 exclude:
   - package.json
   - '*.lock'
+  - Makefile
+  - Dockerfile

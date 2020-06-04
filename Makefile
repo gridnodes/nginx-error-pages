@@ -16,8 +16,12 @@
 #
 # Copyright (C) 2020 mksec <support@mksec.de>
 
-all: svgs
+all: build
 
+
+# ==========================
+# Render additional graphics
+# ==========================
 
 svgs:                          \
 	_includes/svgs/mark-ok.svg \
@@ -34,6 +38,20 @@ _includes/svgs/mark-fail.svg:                                        \
 	_includes/svgs/combine.sh solid/circle solid/times-circle > $@
 
 
+# =====
+# build
+# =====
+
+build: svgs
+	jekyll build -V
+
+
+# =======
+# cleanup
+# =======
+
 clean:
 	@rm -f \
-		_includes/svgs/*.svg
+		_includes/svgs/*.svg \
+		_site                \
+		.jekyll-cache
