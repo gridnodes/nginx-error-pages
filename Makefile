@@ -58,7 +58,8 @@ build-dev:
 # =======
 
 clean:
-	@rm -f \
+	@rm -rf \
 		_includes/svgs/*.svg \
 		_site                \
-		.jekyll-cache
+		.jekyll-cache        \
+		build

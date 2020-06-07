@@ -22,14 +22,19 @@
 FROM jekyll/jekyll
 
 # Use a custom build directory, as the default one doesn't persist the data
-# between individual build steps, as it's a Docker volume.
+# between individual build steps, because it's a Docker volume.
+RUN mkdir /build && chown -R jekyll:jekyll /build
 WORKDIR /build
-COPY  . /build
-RUN chown -R jekyll:jekyll /build
 
-# Install the required dependencies and generate the error pages with jekyll.
-RUN yarn install
-RUN make build
+# First, just copy the dependencies file into the build context and install them
+# by using the yarn package manager. As this file rarely changes, this build
+# step can be cached, even if other source files change more often.
+COPY package.json /build
+RUN  yarn install
+
+# Copy all sources into the build context and generate the error pages.
+COPY . /build
+RUN  make build
 
 # Alter permissions of the generated files, to just allow root writeable access
 # and exclude especially nginx from writing into these files.
