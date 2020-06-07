@@ -16,24 +16,12 @@
 #
 # Copyright (C) 2020 mksec <support@mksec.de>
 
-sass:
-  # Add dependencies installed by yarn / npm to the search path of Jekyll's sass
-  # compiler, so these can be imported by generated assets.
-  load_paths:
-    - _includes
-    - node_modules
+# Don't use any indentation and don't wrap generated HTML, to avoid additional
+# newlines and whitespace. Modern browsers indent sourcecode automatically in
+# debug-mode, so this shouldn't pose a problem.
+indent: no
+wrap:   0
 
-  # Minify the CSS output by stripping out comments and unnecessary spaces,
-  # compressing the output into a single line. This setting ensures a minified
-  # size of the error pages.
-  style: compressed
-
-
-# Exclude all files not required for deployment, to optimize the build process
-# by reducing necessary copying of files and reducing the package size.
-exclude:
-  - package.json
-  - '*.lock'
-  - Makefile
-  - Dockerfile
-  - tidy.yaml
+# Omit all optional HTML tags to further reduce the filesize.
+omit-optional-tags: yes
+tidy-mark: no

@@ -21,6 +21,11 @@
 # configuration is required.
 FROM jekyll/jekyll
 
+# For minifying the generated error pages, the additional 'tidy' tool will be
+# used. For optimized caching, it will be installed first, so no additional
+# installation is required for subsequent builds.
+RUN apk add tidyhtml
+
 # Use a custom build directory, as the default one doesn't persist the data
 # between individual build steps, because it's a Docker volume.
 RUN mkdir /build && chown -R jekyll:jekyll /build

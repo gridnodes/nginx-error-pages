@@ -44,6 +44,7 @@ _includes/svgs/mark-fail.svg:                                        \
 
 build: svgs
 	jekyll build -V
+	find "_site" -name "*.html" -print -exec tidy -config tidy.yaml -qm {} \;
 
 build-dev:
 	docker build -t nginx-error-pages .
